@@ -17,6 +17,31 @@ class HomeView extends StatefulWidget
 
 class _HomeViewState extends State<HomeView>
 {
+  var toneItems = ["Tone", "Pulse", "Warble"];
+  var selectedTone = "Tone";
+
+  var nbnoItems = ["NBNO", "WBNO", "SPNO"];
+  var selectedNBNO = "NBNO";
+
+  var rightACItems = ["AC", "BC", "INS", "FF"];
+  var selectedRightAC = "AC";
+
+  var leftACItems = ["AC", "BC", "INS", "FF"];
+  var selectedLeftAC = "AC";
+
+  var rateItems = ["0.5", "1"];
+  var selectedRate = "0.5";
+
+  var hzValue = "125 Hz";
+  var hzCounter = 125;
+
+  var rightCounter = -10;
+  var rightValue = "-10";
+
+  var leftCounter = -10;
+  var leftValue = "-10";
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -25,7 +50,7 @@ class _HomeViewState extends State<HomeView>
       child: Row(
         children: [
           Container(
-            color: Colors.grey.shade400,
+            color: Colors.black26,
             width:  MediaQuery.of(context).size.width * 0.33,
             child: Column(
               children:  [
@@ -80,7 +105,6 @@ class _HomeViewState extends State<HomeView>
 
                 Expanded(
                     child: Row(
-                      // crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
                           width: 205,
@@ -88,34 +112,6 @@ class _HomeViewState extends State<HomeView>
                           child: Column(
                             children: [
                               Container(height: 15,),
-
-                              Row(
-                                children: [
-                                  const Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsets.only(left: 25),
-                                        child: Text(
-                                          "Steps",
-                                          style: TextStyle(
-                                              fontSize: 20
-                                          ),
-                                        ),
-                                      )
-                                  ),
-
-                                  Expanded(
-                                      child: ElevatedButton(
-                                        onPressed: () {
-                                          debugPrint("Steps Button Clicked");
-                                        },
-                                        child: Text("1"),
-                                        style: ButtonStyle(
-                                            backgroundColor: MaterialStateProperty.all(Colors.black26)
-                                        ),
-                                      )
-                                  )
-                                ],
-                              ),
 
                               Row(
                                 children: [
@@ -132,15 +128,31 @@ class _HomeViewState extends State<HomeView>
                                   ),
 
                                   Expanded(
-                                      child: ElevatedButton(
-                                        onPressed: () {
-                                          debugPrint("Rates Button Clicked");
-                                        },
-                                        child: Text("0.5Hz"),
-                                        style: ButtonStyle(
-                                            backgroundColor: MaterialStateProperty.all(Colors.black26)
+                                    child: DropdownButton(
+                                        iconEnabledColor: Colors.white,
+                                        dropdownColor: Colors.grey,
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 25
                                         ),
-                                      )
+                                        value: selectedRate,
+                                        items: rateItems.map((String currentValue) {
+                                          return DropdownMenuItem(
+                                              value: currentValue,
+                                              child: Padding(
+                                                padding: EdgeInsets.only(left: 13),
+                                                child: Text(
+                                                  currentValue,
+                                                ),
+                                              )
+                                          );
+                                        }).toList(),
+                                        onChanged: (String? newValue) {
+                                          setState(() {
+                                            selectedRate = newValue ?? "";
+                                          });
+                                        }
+                                    ),
                                   )
                                 ],
                               ),
@@ -183,7 +195,9 @@ class _HomeViewState extends State<HomeView>
                                 width: double.infinity,
                                 child: ElevatedButton(
                                     onPressed: () {
-                                      debugPrint("Up Button Clicked");
+                                      setState(() {
+                                        rightValue = getRightUpValue();
+                                      });
                                     },
                                     style: ButtonStyle(
                                       backgroundColor: MaterialStateProperty.all(Colors.black26)
@@ -205,7 +219,7 @@ class _HomeViewState extends State<HomeView>
                                 width: double.infinity,
                                 child: Center(
                                   child: Text(
-                                    "0",
+                                    "$rightValue",
                                     style: TextStyle(
                                       fontSize: 25
                                     ),
@@ -220,7 +234,9 @@ class _HomeViewState extends State<HomeView>
                                 width: double.infinity,
                                 child: ElevatedButton(
                                     onPressed: () {
-                                      debugPrint("Down Button Clicked");
+                                      setState(() {
+                                        rightValue = getRightDownValue();
+                                      });
                                     },
                                     style: ButtonStyle(
                                         backgroundColor: MaterialStateProperty.all(Colors.black26)
@@ -332,51 +348,70 @@ class _HomeViewState extends State<HomeView>
                       Container(height: 25,),
 
                       Row(
-                        // crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                              width: 134,
-                              height: 50,
+                            // padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
                               color: Colors.grey,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  debugPrint("Tone Button Clicked");
-                                },
-                                style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(Colors.grey)
+                            ),
+                            child: DropdownButton(
+                              iconEnabledColor: Colors.white,
+                                dropdownColor: Colors.grey,
+                                focusColor: Colors.red,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25
                                 ),
-                                child: Text(
-                                  "TONE",
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.white
-                                  ),
-                                ),
-                              )
+                                value: selectedTone,
+                                items: toneItems.map((String currentValue) {
+                                  return DropdownMenuItem(
+                                      value: currentValue,
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left: 13),
+                                        child: Text(
+                                          currentValue,
+                                        ),
+                                      )
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    selectedTone = newValue ?? "";
+                                  });
+                                }
+                            ),
                           ),
 
-                          Container(width: 10,),
-
                           Container(
-                              width: 134,
-                              height: 50,
+                            decoration: BoxDecoration(
                               color: Colors.grey,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  debugPrint("NBNO Button Clicked");
-                                },
-                                style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(Colors.grey)
+                            ),
+                            child: DropdownButton(
+                                iconEnabledColor: Colors.white,
+                                dropdownColor: Colors.grey,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25
                                 ),
-                                child: Text(
-                                  "NBNO",
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.white
-                                  ),
-                                ),
-                              )
+                                value: selectedNBNO,
+                                items: nbnoItems.map((String currentValue) {
+                                  return DropdownMenuItem(
+                                      value: currentValue,
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left: 10),
+                                        child: Text(
+                                          currentValue,
+                                        ),
+                                      )
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    selectedNBNO = newValue ?? "";
+                                  });
+                                }
+                            ),
                           ),
                         ],
                       ),
@@ -401,51 +436,71 @@ class _HomeViewState extends State<HomeView>
                       Container(height: 25,),
 
                       Row(
-                        // crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                              width: 134,
-                              height: 50,
+                            padding: EdgeInsets.only(left: 20, right: 20),
+                            decoration: BoxDecoration(
                               color: Colors.grey,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  debugPrint("AC Button Clicked");
-                                },
-                                style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(Colors.grey)
+                            ),
+                            child: DropdownButton(
+                                iconEnabledColor: Colors.white,
+                                dropdownColor: Colors.grey,
+                                focusColor: Colors.red,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25
                                 ),
-                                child: Text(
-                                  "AC",
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.white
-                                  ),
-                                ),
-                              )
+                                value: selectedRightAC,
+                                items: rightACItems.map((String currentValue) {
+                                  return DropdownMenuItem(
+                                      value: currentValue,
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left: 13),
+                                        child: Text(
+                                          currentValue,
+                                        ),
+                                      )
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    selectedRightAC = newValue ?? "";
+                                  });
+                                }
+                            ),
                           ),
 
-                          Container(width: 10,),
-
                           Container(
-                              width: 134,
-                              height: 50,
+                            padding: EdgeInsets.only(left: 20, right: 20),
+                            decoration: BoxDecoration(
                               color: Colors.grey,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  debugPrint("AC Button Clicked");
-                                },
-                                style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(Colors.grey)
+                            ),
+                            child: DropdownButton(
+                                iconEnabledColor: Colors.white,
+                                dropdownColor: Colors.grey,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25
                                 ),
-                                child: Text(
-                                  "AC",
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.white
-                                  ),
-                                ),
-                              )
+                                value: selectedLeftAC,
+                                items: leftACItems.map((String currentValue) {
+                                  return DropdownMenuItem(
+                                      value: currentValue,
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left: 10),
+                                        child: Text(
+                                          currentValue,
+                                        ),
+                                      )
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    selectedLeftAC = newValue ?? "";
+                                  });
+                                }
+                            ),
                           ),
                         ],
                       ),
@@ -491,7 +546,7 @@ class _HomeViewState extends State<HomeView>
                              color: Colors.white,
                              child: Center(
                                child: Text(
-                                 "125Hz",
+                                 "${hzValue.toString()}",
                                  style: TextStyle(
                                    fontSize: 30
                                  ),
@@ -511,7 +566,9 @@ class _HomeViewState extends State<HomeView>
                                      backgroundColor: MaterialStateProperty.all(Colors.grey)
                                    ),
                                    onPressed: () {
-                                     debugPrint("+Hz Clicked");
+                                     setState(() {
+                                       hzValue = getHZPositiveValue();
+                                     });
                                    },
                                    child: Text(
                                      "+Hz",
@@ -532,10 +589,12 @@ class _HomeViewState extends State<HomeView>
                                        backgroundColor: MaterialStateProperty.all(Colors.grey)
                                    ),
                                    onPressed: () {
-                                     debugPrint("+Hz Clicked");
+                                     setState(() {
+                                       hzValue = getHZNegativeValue();
+                                     });
                                    },
                                    child: Text(
-                                     "+Hz",
+                                     "-Hz",
                                      style: TextStyle(
                                          fontSize: 20
                                      ),
@@ -611,7 +670,6 @@ class _HomeViewState extends State<HomeView>
 
                 Expanded(
                     child: Row(
-                      // crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
 
                         SizedBox(
@@ -625,7 +683,9 @@ class _HomeViewState extends State<HomeView>
                                 width: double.infinity,
                                 child: ElevatedButton(
                                     onPressed: () {
-                                      debugPrint("Up Button Clicked");
+                                      setState(() {
+                                        leftValue = getLeftUpValue();
+                                      });
                                     },
                                     style: ButtonStyle(
                                         backgroundColor: MaterialStateProperty.all(Colors.black26)
@@ -647,7 +707,7 @@ class _HomeViewState extends State<HomeView>
                                 width: double.infinity,
                                 child: Center(
                                   child: Text(
-                                    "0",
+                                    "$leftValue",
                                     style: TextStyle(
                                         fontSize: 25
                                     ),
@@ -662,7 +722,9 @@ class _HomeViewState extends State<HomeView>
                                 width: double.infinity,
                                 child: ElevatedButton(
                                     onPressed: () {
-                                      debugPrint("Down Button Clicked");
+                                      setState(() {
+                                        leftValue = getLeftDownValue();
+                                      });
                                     },
                                     style: ButtonStyle(
                                         backgroundColor: MaterialStateProperty.all(Colors.black26)
@@ -706,42 +768,40 @@ class _HomeViewState extends State<HomeView>
                         ),
 
                         SizedBox(
-                            width: 180,
-                            // color: Colors.grey,
+                            width: 160,
+
                             child: Column(
                               children: [
                                 Container(height: 15,),
 
-                                Row(
-                                  children: [
-                                    // Container(height: 100,),
-
-                                    Expanded(
-                                        child: ElevatedButton(
-                                          onPressed: () {
-                                            debugPrint("Steps Button Clicked");
-                                          },
-                                          child: Text("1"),
-                                          style: ButtonStyle(
-                                              backgroundColor: MaterialStateProperty.all(Colors.black26)
-                                          ),
-                                        )
-                                    ),
-
-                                    Expanded(
-                                        child: Padding(
-                                          padding: EdgeInsets.only(left: 25),
-                                          child: Text(
-                                            "Steps",
-                                            style: TextStyle(
-                                                fontSize: 20
-                                            ),
-                                          ),
-                                        )
-                                    ),
-
-                                  ],
-                                ),
+                                // Row(
+                                //   children: [
+                                //     Expanded(
+                                //         child: ElevatedButton(
+                                //           onPressed: () {
+                                //             debugPrint("Steps Button Clicked");
+                                //           },
+                                //           child: Text("1"),
+                                //           style: ButtonStyle(
+                                //               backgroundColor: MaterialStateProperty.all(Colors.black26)
+                                //           ),
+                                //         )
+                                //     ),
+                                //
+                                //     Expanded(
+                                //         child: Padding(
+                                //           padding: EdgeInsets.only(left: 25),
+                                //           child: Text(
+                                //             "Steps",
+                                //             style: TextStyle(
+                                //                 fontSize: 20
+                                //             ),
+                                //           ),
+                                //         )
+                                //     ),
+                                //
+                                //   ],
+                                // ),
 
                               ],
                             )
@@ -762,6 +822,100 @@ class _HomeViewState extends State<HomeView>
   void initState(){
     _tooltipBehavior =  TooltipBehavior(enable: true);
     super.initState();
+  }
+
+  String getHZPositiveValue()
+  {
+    if (hzCounter == 125) {
+      hzCounter = 250;
+    } else if (hzCounter == 250) {
+      hzCounter = 500;
+    } else if (hzCounter == 500) {
+      hzCounter = 750;
+    } else if (hzCounter == 750) {
+      hzCounter = 1000;
+    } else if (hzCounter == 1000) {
+      hzCounter = 1500;
+    } else if (hzCounter == 1500) {
+      hzCounter = 2000;
+    } else if (hzCounter == 2000) {
+      hzCounter = 3000;
+    } else if (hzCounter == 3000) {
+      hzCounter = 4000;
+    } else if (hzCounter == 4000) {
+      hzCounter = 5000;
+    } else if (hzCounter == 5000) {
+      hzCounter = 6000;
+    } else if (hzCounter == 6000) {
+      hzCounter = 8000;
+    }
+
+    return "$hzCounter Hz";
+  }
+
+  String getHZNegativeValue()
+  {
+    if (hzCounter == 8000) {
+      hzCounter = 6000;
+    } else if (hzCounter == 6000) {
+      hzCounter = 5000;
+    } else if (hzCounter == 5000) {
+      hzCounter = 4000;
+    } else if (hzCounter == 4000) {
+      hzCounter = 3000;
+    } else if (hzCounter == 3000) {
+      hzCounter = 2000;
+    } else if (hzCounter == 2000) {
+      hzCounter = 1500;
+    } else if (hzCounter == 1500) {
+      hzCounter = 1000;
+    } else if (hzCounter == 1000) {
+      hzCounter = 750;
+    } else if (hzCounter == 750) {
+      hzCounter = 500;
+    } else if (hzCounter == 500) {
+      hzCounter = 250;
+    } else if (hzCounter == 250) {
+      hzCounter = 125;
+    }
+
+    return "$hzCounter Hz";
+  }
+
+  String getRightUpValue()
+  {
+    if (rightCounter != 120) {
+      rightCounter = rightCounter + 5;
+    }
+
+    return "$rightCounter";
+  }
+
+  String getRightDownValue()
+  {
+    if (rightCounter != -10) {
+      rightCounter = rightCounter - 5;
+    }
+
+    return "$rightCounter";
+  }
+
+  String getLeftUpValue()
+  {
+    if (rightCounter != 120) {
+      rightCounter = rightCounter + 5;
+    }
+
+    return "$rightCounter";
+  }
+
+  String getLeftDownValue()
+  {
+    if (rightCounter != -10) {
+      rightCounter = rightCounter - 5;
+    }
+
+    return "$rightCounter";
   }
 }
 
