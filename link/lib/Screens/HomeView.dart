@@ -762,50 +762,6 @@ class _HomeViewState extends State<HomeView>
                             ],
                           ),
                         ),
-
-                        Container(
-                          width: 8,
-                        ),
-
-                        SizedBox(
-                            width: 160,
-
-                            child: Column(
-                              children: [
-                                Container(height: 15,),
-
-                                // Row(
-                                //   children: [
-                                //     Expanded(
-                                //         child: ElevatedButton(
-                                //           onPressed: () {
-                                //             debugPrint("Steps Button Clicked");
-                                //           },
-                                //           child: Text("1"),
-                                //           style: ButtonStyle(
-                                //               backgroundColor: MaterialStateProperty.all(Colors.black26)
-                                //           ),
-                                //         )
-                                //     ),
-                                //
-                                //     Expanded(
-                                //         child: Padding(
-                                //           padding: EdgeInsets.only(left: 25),
-                                //           child: Text(
-                                //             "Steps",
-                                //             style: TextStyle(
-                                //                 fontSize: 20
-                                //             ),
-                                //           ),
-                                //         )
-                                //     ),
-                                //
-                                //   ],
-                                // ),
-
-                              ],
-                            )
-                        ),
                       ],
                     )
                 )
