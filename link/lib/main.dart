@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:link/Screens/HomeView.dart';
+import 'package:link/Screens/PureTone.dart';
 
 void main()
 {
