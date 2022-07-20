@@ -45,7 +45,8 @@ class _PureToneState extends State<PureTone>
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
+    return Expanded(
+        child: Container(
       color: Colors.black26,
       child: Row(
         children: [
@@ -770,6 +771,7 @@ class _PureToneState extends State<PureTone>
           )
         ],
       ),
+    )
     );
     throw UnimplementedError();
   }

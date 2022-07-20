@@ -24,10 +24,10 @@ class BaseClass extends StatelessWidget
       debugShowCheckedModeBanner: false,
       title: "Link",
       home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text("Link"),
-        ),
+        // appBar: AppBar(
+        //   centerTitle: true,
+        //   title: const Text("Link"),
+        // ),
         body: const HomeView(),
       )
     );
