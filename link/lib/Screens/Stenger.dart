@@ -1,38 +1,31 @@
 import 'package:flutter/material.dart';
 
-class AddPatient extends StatefulWidget
+class Stenger extends StatefulWidget
 {
-  const AddPatient({Key? key}) : super(key: key);
+  const Stenger({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _AddPatientState();
+    return _StengerState();
     throw UnimplementedError();
   }
 }
 
-class _AddPatientState extends State<AddPatient>
+class _StengerState extends State<Stenger>
 {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.white,
-        // leading: BackButton(
-        //   color: Colors.black,
-        // ),
         centerTitle: true,
         title: Text(
-          "Add Patient",
-          // style: TextStyle(
-          //   color: Colors.black
-          // ),
+          "Stenger",
         ),
       ),
       body: Container(
-        child: Text("Add Patient"),
+        child: Text("Stenger"),
       ),
     );
     throw UnimplementedError();

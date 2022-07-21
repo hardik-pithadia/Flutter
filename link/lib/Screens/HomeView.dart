@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:link/Screens/Ablb.dart';
 import 'package:link/Screens/AddPatiendView.dart';
+import 'package:link/Screens/AutoThreshold.dart';
+import 'package:link/Screens/Calibrate.dart';
+import 'package:link/Screens/HighFrequency.dart';
+import 'package:link/Screens/MultiFrequency.dart';
 import 'package:link/Screens/PureTone.dart';
+import 'package:link/Screens/Sisi.dart';
+import 'package:link/Screens/SpeechTest.dart';
+import 'package:link/Screens/Stenger.dart';
+import 'package:link/Screens/ToneyDecay.dart';
+import 'package:link/Screens/ViewPatient.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 late TooltipBehavior _tooltipBehavior;
@@ -157,6 +167,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("Add Patient Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AddPatient())
+                );
               },
               child: Container(
                 child: Column(
@@ -190,7 +205,7 @@ class _HomeViewState extends State<HomeView>
                 debugPrint("Pure Tone Clicked");
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => const AddPatient())
+                  MaterialPageRoute(builder: (context) => const PureTone())
                 );
               },
               child: Container(
@@ -223,6 +238,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("Toney Decay Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ToneyDecay())
+                );
               },
               child: Container(
                 child: Column(
@@ -254,6 +274,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("Stenger Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Stenger())
+                );
               },
               child: Container(
                 child: Column(
@@ -285,6 +310,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("Multi Frequency Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MultiFrequency())
+                );
               },
               child: Container(
                 child: Column(
@@ -316,6 +346,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("High Frequency Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HighFrequency())
+                );
               },
               child: Container(
                 child: Column(
@@ -347,6 +382,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("View Patient");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ViewPatient())
+                );
               },
               child: Container(
                 child: Column(
@@ -378,6 +418,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("Speech Test Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SpeechTest())
+                );
               },
               child: Container(
                 child: Column(
@@ -409,6 +454,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("ABLB Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Ablb())
+                );
               },
               child: Container(
                 child: Column(
@@ -440,6 +490,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("SISI Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Sisi())
+                );
               },
               child: Container(
                 child: Column(
@@ -471,6 +526,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("Auto Threshold Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AutoThreshold())
+                );
               },
               child: Container(
                 child: Column(
@@ -502,6 +562,11 @@ class _HomeViewState extends State<HomeView>
             GestureDetector(
               onTap: () {
                 debugPrint("Calibrate Clicked");
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Calibrate())
+                );
               },
               child: Container(
                 child: Column(

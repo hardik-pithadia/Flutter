@@ -1,38 +1,31 @@
 import 'package:flutter/material.dart';
 
-class AddPatient extends StatefulWidget
+class Calibrate extends StatefulWidget
 {
-  const AddPatient({Key? key}) : super(key: key);
+  const Calibrate({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _AddPatientState();
+    return _CalibrateState();
     throw UnimplementedError();
   }
 }
 
-class _AddPatientState extends State<AddPatient>
+class _CalibrateState extends State<Calibrate>
 {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.white,
-        // leading: BackButton(
-        //   color: Colors.black,
-        // ),
         centerTitle: true,
         title: Text(
-          "Add Patient",
-          // style: TextStyle(
-          //   color: Colors.black
-          // ),
+          "Calibrate",
         ),
       ),
       body: Container(
-        child: Text("Add Patient"),
+        child: Text("Calibrate"),
       ),
     );
     throw UnimplementedError();

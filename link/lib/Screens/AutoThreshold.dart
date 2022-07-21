@@ -1,38 +1,31 @@
 import 'package:flutter/material.dart';
 
-class AddPatient extends StatefulWidget
+class AutoThreshold extends StatefulWidget
 {
-  const AddPatient({Key? key}) : super(key: key);
+  const AutoThreshold({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _AddPatientState();
+    return _AutoThresholdState();
     throw UnimplementedError();
   }
 }
 
-class _AddPatientState extends State<AddPatient>
+class _AutoThresholdState extends State<AutoThreshold>
 {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.white,
-        // leading: BackButton(
-        //   color: Colors.black,
-        // ),
         centerTitle: true,
         title: Text(
-          "Add Patient",
-          // style: TextStyle(
-          //   color: Colors.black
-          // ),
+          "AutoThreshold",
         ),
       ),
       body: Container(
-        child: Text("Add Patient"),
+        child: Text("AutoThreshold"),
       ),
     );
     throw UnimplementedError();
