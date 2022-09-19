@@ -4,6 +4,7 @@ import 'package:link/Screens/AddPatiendView.dart';
 import 'package:link/Screens/AutoThreshold.dart';
 import 'package:link/Screens/Calibrate.dart';
 import 'package:link/Screens/HighFrequency.dart';
+import 'package:link/Screens/MLB.dart';
 import 'package:link/Screens/MultiFrequency.dart';
 import 'package:link/Screens/PureTone.dart';
 import 'package:link/Screens/Sisi.dart';
@@ -309,11 +310,11 @@ class _HomeViewState extends State<HomeView>
 
             GestureDetector(
               onTap: () {
-                debugPrint("Multi Frequency Clicked");
+                debugPrint("MLB Clicked");
 
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const MultiFrequency())
+                    MaterialPageRoute(builder: (context) => const MLB())
                 );
               },
               child: Container(
@@ -330,7 +331,7 @@ class _HomeViewState extends State<HomeView>
                       ),
                     ),
                     Text(
-                      "MULTI FREQUENCY",
+                      "MLB",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,

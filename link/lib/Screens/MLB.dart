@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class Ablb extends StatefulWidget
+class MLB extends StatefulWidget
 {
-  const Ablb({Key? key}) : super(key: key);
+  const MLB({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _AblbState();
+    return _MLBState();
   }
 }
 
-class _AblbState extends State<Ablb>
+class _MLBState extends State<MLB>
 {
   var isVisibleFrame1 = true;
   var isVisibleFrame2 = false;
@@ -25,7 +25,7 @@ class _AblbState extends State<Ablb>
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "ABLB",
+          "MLB",
         ),
       ),
       body: Container(
@@ -104,7 +104,7 @@ class _AblbState extends State<Ablb>
                         height: 8,
                         color: Colors.black,
                       )
-                          : Container(
+                      : Container(
                         width: 0,
                         height: 0,
                         color: Colors.pink,
@@ -252,9 +252,9 @@ class _AblbState extends State<Ablb>
                     children: [
                       //Draw Chart
                       Container(
-                          width: 550,
-                          height: 300,
-                          color: Colors.white
+                        width: 550,
+                        height: 300,
+                        color: Colors.white
                       ),
 
                       const SizedBox(
@@ -390,8 +390,8 @@ class _AblbState extends State<Ablb>
                             child: const Text(
                               "Input CH1 & CH2",
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 30
+                                color: Colors.white,
+                                fontSize: 30
                               ),
                             )
                         ),
@@ -404,9 +404,9 @@ class _AblbState extends State<Ablb>
                       const Text(
                         'Tone',
                         style: TextStyle(
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white
                         ),
                       ),
 
@@ -485,25 +485,25 @@ class _AblbState extends State<Ablb>
                                       debugPrint("Up Button Clicked");
                                     },
                                     child: const Text(
-                                      "Up",
+                                        "Up",
                                       style: TextStyle(
-                                          fontSize: 30,
-                                          color: Colors.white
+                                        fontSize: 30,
+                                        color: Colors.white
                                       ),
                                     )
                                 ),
                               ),
-
+                              
                               // const SizedBox(
                               //   height: 15,
                               // ),
-
+                              
                               const Text(
                                 "40",
                                 style: TextStyle(
-                                    fontSize: 35,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.red
+                                  fontSize: 35,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red
                                 ),
                               ),
 
