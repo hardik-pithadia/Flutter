@@ -11,7 +11,7 @@ class HighFrequency extends StatefulWidget
   State<StatefulWidget> createState() {
     // TODO: implement createState
     return _HighFrequencyState();
-    throw UnimplementedError();
+    // throw UnimplementedError();
   }
 }
 
@@ -51,7 +51,7 @@ class _HighFrequencyState extends State<HighFrequency>
     return Material(
         child: Scaffold(
           appBar: AppBar(
-            title: Text(
+            title: const Text(
               "High-FREQUENCY",
               style: TextStyle(
                   fontSize: 30
@@ -154,7 +154,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                             child: DropdownButton(
                                                 iconEnabledColor: Colors.white,
                                                 dropdownColor: Colors.grey,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 25
                                                 ),
@@ -163,7 +163,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                                   return DropdownMenuItem(
                                                       value: currentValue,
                                                       child: Padding(
-                                                        padding: EdgeInsets.only(left: 13),
+                                                        padding: const EdgeInsets.only(left: 13),
                                                         child: Text(
                                                           currentValue,
                                                         ),
@@ -213,7 +213,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                   children: [
                                     Container(height: 22,),
 
-                                    Container(
+                                    SizedBox(
                                       height: 50,
                                       width: double.infinity,
                                       child: ElevatedButton(
@@ -243,7 +243,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                       child: Center(
                                         child: Text(
                                           "$rightValue",
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontSize: 25
                                           ),
                                         ),
@@ -252,7 +252,7 @@ class _HighFrequencyState extends State<HighFrequency>
 
                                     Container(height: 10,),
 
-                                    Container(
+                                    SizedBox(
                                       height: 50,
                                       width: double.infinity,
                                       child: ElevatedButton(
@@ -264,7 +264,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                           style: ButtonStyle(
                                               backgroundColor: MaterialStateProperty.all(Colors.black26)
                                           ),
-                                          child: Text(
+                                          child: const Text(
                                             "DOWN",
                                             style: TextStyle(
                                                 fontSize: 22
@@ -275,7 +275,7 @@ class _HighFrequencyState extends State<HighFrequency>
 
                                     Container(height: 10,),
 
-                                    Container(
+                                    SizedBox(
                                       height: 50,
                                       width: double.infinity,
                                       child: ElevatedButton(
@@ -285,7 +285,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                           style: ButtonStyle(
                                               backgroundColor: MaterialStateProperty.all(Colors.black26)
                                           ),
-                                          child: Text(
+                                          child: const Text(
                                             "SIGNAL",
                                             style: TextStyle(
                                                 fontSize: 22
@@ -321,7 +321,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                       width: 134,
                                       height: 50,
                                       color: Colors.black,
-                                      child: Center(
+                                      child: const Center(
                                         child: Text(
                                           "CH1",
                                           style: TextStyle(
@@ -338,7 +338,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                     width: 134,
                                     height: 50,
                                     color: Colors.black,
-                                    child: Center(
+                                    child: const Center(
                                       child: Text(
                                         "INPUT",
                                         style: TextStyle(
@@ -355,7 +355,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                     width: 134,
                                     height: 50,
                                     color: Colors.black,
-                                    child: Center(
+                                    child: const Center(
                                       child: Text(
                                         "CH2",
                                         style: TextStyle(
@@ -375,14 +375,14 @@ class _HighFrequencyState extends State<HighFrequency>
                                 children: [
                                   Container(
                                     // padding: EdgeInsets.all(5),
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Colors.grey,
                                     ),
                                     child: DropdownButton(
                                         iconEnabledColor: Colors.white,
                                         dropdownColor: Colors.grey,
                                         focusColor: Colors.red,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 25
                                         ),
@@ -391,7 +391,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                           return DropdownMenuItem(
                                               value: currentValue,
                                               child: Padding(
-                                                padding: EdgeInsets.only(left: 13),
+                                                padding: const EdgeInsets.only(left: 13),
                                                 child: Text(
                                                   currentValue,
                                                 ),
@@ -407,13 +407,13 @@ class _HighFrequencyState extends State<HighFrequency>
                                   ),
 
                                   Container(
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Colors.grey,
                                     ),
                                     child: DropdownButton(
                                         iconEnabledColor: Colors.white,
                                         dropdownColor: Colors.grey,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 25
                                         ),
@@ -422,7 +422,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                           return DropdownMenuItem(
                                               value: currentValue,
                                               child: Padding(
-                                                padding: EdgeInsets.only(left: 10),
+                                                padding: const EdgeInsets.only(left: 10),
                                                 child: Text(
                                                   currentValue,
                                                 ),
@@ -445,7 +445,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                 height: 50,
                                 width: 150,
                                 color: Colors.black,
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     "OUTPUT",
                                     style: TextStyle(
@@ -462,15 +462,15 @@ class _HighFrequencyState extends State<HighFrequency>
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.only(left: 20, right: 20),
-                                    decoration: BoxDecoration(
+                                    padding: const EdgeInsets.only(left: 20, right: 20),
+                                    decoration: const BoxDecoration(
                                       color: Colors.grey,
                                     ),
                                     child: DropdownButton(
                                         iconEnabledColor: Colors.white,
                                         dropdownColor: Colors.grey,
                                         focusColor: Colors.red,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 25
                                         ),
@@ -479,7 +479,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                           return DropdownMenuItem(
                                               value: currentValue,
                                               child: Padding(
-                                                padding: EdgeInsets.only(left: 13),
+                                                padding: const EdgeInsets.only(left: 13),
                                                 child: Text(
                                                   currentValue,
                                                 ),
@@ -495,14 +495,14 @@ class _HighFrequencyState extends State<HighFrequency>
                                   ),
 
                                   Container(
-                                    padding: EdgeInsets.only(left: 20, right: 20),
-                                    decoration: BoxDecoration(
+                                    padding: const EdgeInsets.only(left: 20, right: 20),
+                                    decoration: const BoxDecoration(
                                       color: Colors.grey,
                                     ),
                                     child: DropdownButton(
                                         iconEnabledColor: Colors.white,
                                         dropdownColor: Colors.grey,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 25
                                         ),
@@ -511,7 +511,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                           return DropdownMenuItem(
                                               value: currentValue,
                                               child: Padding(
-                                                padding: EdgeInsets.only(left: 10),
+                                                padding: const EdgeInsets.only(left: 10),
                                                 child: Text(
                                                   currentValue,
                                                 ),
@@ -538,7 +538,7 @@ class _HighFrequencyState extends State<HighFrequency>
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
+                              SizedBox(
                                 height: 75,
                                 width: double.infinity,
 
@@ -546,7 +546,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                   onPressed: () {
                                     debugPrint("Store Button Clicked");
                                   },
-                                  child: Text(
+                                  child:  Text(
                                     "STORE",
                                     style: TextStyle(
                                         fontSize: 25
@@ -570,7 +570,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                     child: Center(
                                       child: Text(
                                         "${hzValue.toString()}",
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 30
                                         ),
                                       ),
@@ -593,7 +593,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                               hzValue = getHZPositiveValue();
                                             });
                                           },
-                                          child: Text(
+                                          child: const Text(
                                             "+Hz",
                                             style: TextStyle(
                                                 fontSize: 20
@@ -604,7 +604,7 @@ class _HighFrequencyState extends State<HighFrequency>
 
                                       Container(height: 5,),
 
-                                      Container(
+                                      SizedBox(
                                         width: 150,
                                         height: 50,
                                         child: ElevatedButton(
@@ -616,7 +616,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                               hzValue = getHZNegativeValue();
                                             });
                                           },
-                                          child: Text(
+                                          child: const Text(
                                             "-Hz",
                                             style: TextStyle(
                                                 fontSize: 20
@@ -731,7 +731,7 @@ class _HighFrequencyState extends State<HighFrequency>
                                       child: Center(
                                         child: Text(
                                           "$leftValue",
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontSize: 25
                                           ),
                                         ),
